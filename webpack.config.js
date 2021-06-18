@@ -12,6 +12,19 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", //step 3 > Inject styles into DOM
+                    "css-loader",   //step 2 > Turns css into commonjs 
+                    "sass-loader"   //step 1 > Turns sass into css
+                ]
+            },
+            {
+                test: /\.json$/,
+                loader: "json-loader",
+                type: "javascript/auto"
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -23,6 +36,12 @@ const config = {
             },
         ],
     },
+    // target: 'web',
+    // devServer: {
+    //     liveReload:  true,
+    //     hot: true,
+    //     port: 8081,
+    // },
     resolve: {
         extensions: [".js", ".jsx", ".json", ".wasm", ".mjs", "*"]
     } 

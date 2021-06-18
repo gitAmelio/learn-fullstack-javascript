@@ -1,0 +1,9 @@
+$color-primary-bg: rgb(70, 3, 59);
+$color-primary-font: rgb(196, 171, 171);
+@import '~bootstrap/scss/bootstrap';
+@import '../sass/style.scss'; 
+
+body {
+    background: $color-primary-bg;
+    color: $color-primary-font;
+}
